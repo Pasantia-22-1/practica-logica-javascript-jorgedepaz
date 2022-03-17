@@ -12,6 +12,7 @@ class Calculadora{
     calculate(data){
         console.log(data);
         this._data = data.split('');
+        
         for (let i = 0; i < this._data.length; i++) {
             if (this._data[i]=='/') {
                 
@@ -19,7 +20,7 @@ class Calculadora{
                 this._data.splice(i-1,3)
                 this._data.splice(i-1, 0, div);
                 console.log(this._data.join(''));
-                
+                i=0;
             }
             
         }
@@ -30,6 +31,7 @@ class Calculadora{
                 this._data.splice(i-1,3)
                 this._data.splice(i-1, 0, mul);
                 console.log(this._data.join(''));
+                i=0;
                 
             }
         }
@@ -40,6 +42,7 @@ class Calculadora{
                 this._data.splice(i-1,3)
                 this._data.splice(i-1, 0, sum);
                 console.log(this._data.join(''));
+                i=0;
             }
         }
         for (let i = 0; i < this._data.length; i++) {
@@ -47,13 +50,14 @@ class Calculadora{
                 
                 let res = this.rest(Number(this._data[i-1]),Number(this._data[i+1]));
                 this._data.splice(i-1,3)
-                this._data.splice(i-1, 0, sum);
+                this._data.splice(i-1, 0, res);
                 console.log(this._data.join(''));
+                i=0;
             }
         }
-        //console.log(this._data);
     }
 }
 
 let calculadora = new Calculadora("Calc");
-calculadora.calculate("4/4+8+9/2*3");
+calculadora.calculate("4*2+5-6/2");
+//calculadora.calculate("4-7+8+9/2*3");
