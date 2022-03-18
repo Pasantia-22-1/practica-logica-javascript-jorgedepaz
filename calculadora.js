@@ -13,6 +13,7 @@ class Calculadora{
         console.log(data);
         this._data = data.split('');
         
+        
         for (let i = 0; i < this._data.length; i++) {
             if (this._data[i]=='/') {
                 
@@ -44,8 +45,6 @@ class Calculadora{
                 console.log(this._data.join(''));
                 i=0;
             }
-        }
-        for (let i = 0; i < this._data.length; i++) {
             if (this._data[i]=='-') {
                 
                 let res = this.rest(Number(this._data[i-1]),Number(this._data[i+1]));
@@ -54,10 +53,14 @@ class Calculadora{
                 console.log(this._data.join(''));
                 i=0;
             }
+            
         }
+        
     }
 }
 
 let calculadora = new Calculadora("Calc");
-calculadora.calculate("4*2+5-6/2");
+//calculadora.calculate("4*2+5-6/2");
 //calculadora.calculate("4-7+8+9/2*3");
+//calculadora.calculate("6-4+3*6-8*5+1");
+//calculadora.calculate("1-8/2+6-4*5+8");
